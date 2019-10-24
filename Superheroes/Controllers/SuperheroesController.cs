@@ -19,7 +19,22 @@ namespace Superheroes.Controllers
         // GET: Superheroes
         public ActionResult Index()
         {
-            return View();
+            //var user = GetUserFromDb(userId);
+            //if (user != null && user.Address != null)
+            //{ // This check will help to avoid NullReferenceExceptions
+            //    return user.Address.PostCode;
+            //}
+
+            var superheroes = dbContext.Superheroes;
+
+            if (superheroes != null)
+            {
+                return View(superheroes);
+            }
+            else
+            {
+                return RedirectToRoute("index", "home");
+            }
         }
 
         // GET: Superheroes/Details/5
