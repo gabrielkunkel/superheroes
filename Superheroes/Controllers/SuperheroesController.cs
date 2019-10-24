@@ -19,12 +19,6 @@ namespace Superheroes.Controllers
         // GET: Superheroes
         public ActionResult Index()
         {
-            //var user = GetUserFromDb(userId);
-            //if (user != null && user.Address != null)
-            //{ // This check will help to avoid NullReferenceExceptions
-            //    return user.Address.PostCode;
-            //}
-
             var superheroes = dbContext.Superheroes;
 
             if (superheroes != null)
@@ -40,7 +34,14 @@ namespace Superheroes.Controllers
         // GET: Superheroes/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Superhero superhero = dbContext.Superheroes.Find(id);
+
+            if (superhero == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(superhero);
         }
 
         // GET: Superheroes/Create
@@ -56,7 +57,6 @@ namespace Superheroes.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
                 dbContext.Superheroes.Add(superhero);
                 dbContext.SaveChanges();
                 return RedirectToAction("Index");

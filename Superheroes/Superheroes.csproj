@@ -244,6 +244,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Superheroes\Create.cshtml" />
     <Content Include="Views\Superheroes\index.cshtml" />
+    <Content Include="Views\Superheroes\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
