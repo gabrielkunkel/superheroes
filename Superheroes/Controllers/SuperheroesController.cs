@@ -70,7 +70,8 @@ namespace Superheroes.Controllers
         // GET: Superheroes/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Superhero superhero = dbContext.Superheroes.Find(id);
+            return View(superhero);
         }
 
         // POST: Superheroes/Edit/5
@@ -79,7 +80,6 @@ namespace Superheroes.Controllers
         {
             try
             {
-                // TODO: Add update logic here
 
                 return RedirectToAction("Index");
             }
