@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -78,9 +79,17 @@ namespace Superheroes.Controllers
         [HttpPost]
         public ActionResult Edit(int id, Superhero superhero)
         {
+
             try
             {
-
+                Superhero superheroToEdit = dbContext.Superheroes.Find(id);
+                dbContext.Superheroes.Attach(superheroToEdit);
+                superheroToEdit.name = superhero.name;
+                superheroToEdit.primaryAbility = superhero.primaryAbility;
+                superheroToEdit.alterEgo = superhero.alterEgo;
+                superheroToEdit.catchPhrase = superhero.catchPhrase;
+                dbContext.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
             catch
