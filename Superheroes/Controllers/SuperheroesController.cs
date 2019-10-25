@@ -88,6 +88,7 @@ namespace Superheroes.Controllers
                 superheroToEdit.primaryAbility = superhero.primaryAbility;
                 superheroToEdit.alterEgo = superhero.alterEgo;
                 superheroToEdit.catchPhrase = superhero.catchPhrase;
+                superheroToEdit.secondaryAbility = superhero.secondaryAbility;
                 dbContext.SaveChanges();
                 
                 return RedirectToAction("Index");

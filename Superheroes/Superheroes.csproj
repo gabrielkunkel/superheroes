@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201910241740439_initial.Designer.cs">
       <DependentUpon>201910241740439_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910250137570_AddSecondaryAbility.cs" />
+    <Compile Include="Migrations\201910250137570_AddSecondaryAbility.Designer.cs">
+      <DependentUpon>201910250137570_AddSecondaryAbility.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -240,11 +244,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Superheroes\Create.cshtml" />
     <Content Include="Views\Superheroes\index.cshtml" />
     <Content Include="Views\Superheroes\Details.cshtml" />
     <Content Include="Views\Superheroes\Edit.cshtml" />
     <Content Include="Views\Superheroes\Delete.cshtml" />
+    <Content Include="Views\Superheroes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -261,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910241740439_initial.resx">
       <DependentUpon>201910241740439_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910250137570_AddSecondaryAbility.resx">
+      <DependentUpon>201910250137570_AddSecondaryAbility.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
