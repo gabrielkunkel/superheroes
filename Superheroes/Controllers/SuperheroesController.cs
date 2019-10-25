@@ -101,7 +101,8 @@ namespace Superheroes.Controllers
         // GET: Superheroes/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Superhero superhero = dbContext.Superheroes.Find(id);
+            return View(superhero);
         }
 
         // POST: Superheroes/Delete/5
@@ -110,7 +111,9 @@ namespace Superheroes.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Superhero superheroToDelete = dbContext.Superheroes.Find(id);
+                dbContext.Superheroes.Remove(superheroToDelete);
+                dbContext.SaveChanges();
 
                 return RedirectToAction("Index");
             }
